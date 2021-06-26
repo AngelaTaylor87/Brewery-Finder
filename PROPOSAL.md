@@ -38,4 +38,4 @@ This should include CSS Framework, 3rd Party APIs, and Server-Side APIS if known
 
 ## Rough breakdown of tasks
 
-[GITHUB PROJECT BOARD]() <- Feel free to just add a link to the github project board here
+[GITHUB PROJECT BOARD](https://angelataylor87.github.io/Brewery-Finder/) <- Feel free to just add a link to the github project board here
