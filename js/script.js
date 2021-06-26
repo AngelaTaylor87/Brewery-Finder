@@ -1,4 +1,5 @@
-/* //establish the elements like this
+
+/* establish the elements like this
 
 let submitButton = document.getElementById("submit-button");
 */
@@ -26,33 +27,28 @@ let userStartingNumber = "6501";
 let userStartingStreet = "Memorial";
 let userStreetType = "drive"
 let userStartingCity = "houston";
-let UserStartingState = "tx"
-
-
-
-
-
+let userStartingState = "tx"
 
 
 
 
 console.log("the link works")
-var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=san%20diego';
+var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=houston';
 
 function getBrewery() {
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
         })
-        .then(function (data) {
-            console.log(data);
+        .then(function (dataBrew) {
+            console.log(dataBrew);
             console.log('Brewery list \n----------');
-            for (var i = 0; i < data.length; i++) {
-                console.log(data[i].name);
-                console.log(data[i].type);
-                console.log(data[i].street);
-                console.log(data[i].city);
-                console.log(data[i].brewery_type);
+            for (var i = 0; i < dataBrew.length; i++) {
+                console.log(dataBrew[i].name);
+                console.log(dataBrew[i].type);
+                console.log(dataBrew[i].street);
+                console.log(dataBrew[i].city);
+                console.log(dataBrew[i].brewery_type);
             }
         });
 
