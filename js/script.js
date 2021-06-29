@@ -28,12 +28,13 @@ let userStartingStreet = "Memorial";
 let userStreetType = "drive"
 let userStartingCity = "houston";
 let userStartingState = "tx"
+let brewSearchCity = "boston"
 
 
 
 
 console.log("the link works")
-var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=houston';
+var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=' + brewSearchCity;
 
 function getBrewery() {
     fetch(requestUrl)
@@ -44,15 +45,19 @@ function getBrewery() {
             console.log(dataBrew);
             console.log('Brewery list \n----------');
             for (var i = 0; i < dataBrew.length; i++) {
-                console.log(dataBrew[i].name);
-                console.log(dataBrew[i].type);
+                console.log("name " + dataBrew[i].name);
+                console.log(dataBrew[i].brewery_type);
                 console.log(dataBrew[i].street);
                 console.log(dataBrew[i].city);
+                console.log(dataBrew[i].latitude);
+                console.log(dataBrew[i].longitude);
                 console.log(dataBrew[i].brewery_type);
             }
         });
 
-
+    // add function to get the google map directions.  https://maps.googleapis.com/maps/api/directions/json?origin=rice+university+houston+tx&destination=memorial+park+houston+tx&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk
 };
+
+
 
 getBrewery();
