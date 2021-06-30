@@ -61,3 +61,18 @@ function getBrewery() {
 
 
 getBrewery();
+
+// blurring or hiding landing page image and showing brewery list
+var subBtnEl = document.querySelector(".button");
+subBtnEl.addEventListener("submit", hideLandingImg());
+
+
+function hideLandingImg() {
+    var landingImgEl = document.querySelector(".circle");
+    landingImgEl.setAttribute("style", "filter: blur(8px)");
+}
+
+
+
+
+
