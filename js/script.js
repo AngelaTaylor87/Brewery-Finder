@@ -81,3 +81,18 @@ function getBrewery() {
 // add function to get the google map directions.  https://maps.googleapis.com/maps/api/directions/json?origin=rice+university+houston+tx&destination=memorial+park+houston+tx&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk
 
 getBrewery();
+
+// blurring or hiding landing page image and showing brewery list
+var subBtnEl = document.querySelector(".button");
+subBtnEl.addEventListener("submit", hideLandingImg());
+
+
+function hideLandingImg() {
+    var landingImgEl = document.querySelector(".circle");
+    landingImgEl.setAttribute("style", "filter: blur(8px)");
+}
+
+
+
+
+
