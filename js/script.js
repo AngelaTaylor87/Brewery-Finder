@@ -56,17 +56,14 @@ function getBrewery() {
 
                 var card = document.createElement('div');
                 var cardBrewName = document.createElement('h4');
-                var cardBrewType = document.createElement('p');
                 var cardBrewStreet = document.createElement('p');
                 var cardBrewCity = document.createElement('p');
 
                 cardBrewName.innerText = dataBrew[i].name;
-                cardBrewType.innerText = dataBrew[i].brewery_type;
                 cardBrewStreet.innerText = dataBrew[i].street;
                 cardBrewCity.innerText = dataBrew[i].city;
 
                 card.append(cardBrewName);
-                card.append(cardBrewType);
                 card.append(cardBrewStreet);
                 card.append(cardBrewCity);
                 brewResults.append(card);
