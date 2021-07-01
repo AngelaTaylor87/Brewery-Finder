@@ -29,10 +29,9 @@
     <a class="navbar-item">
       <form action="/action_page.php"></form>
       <label form="fName">
-        <h2>City</h2>
-      </label>
-      <input type="text" id="city-name" name="cName" placeholder="City Name">
-      <input type="button" value="Submit">
+      </label><br>
+      <input type="text" id="city-name" name="cName" placeholder="Enter City Name"><br><br>
+      <button id="subBtn">Enter<i class="fas fa-beer"></i></button><br><br><br>
 
     </a>
   </div>
@@ -40,19 +39,19 @@
   <div class="row test">
     <img src="./Images/neonbeerbackground.png" class="circle">
 
+
+
+
     <div class="col s12 m4 l3">
-
-
-      <form>
-        <label name="user-start">
-          <input type="text" id="starting-number"><br>
-          <input type="text" id="starting-street"><br>
-          <input type="text" id="street-type"><br>
-          <input type="text" id="starting-city"><br>
-          <input type="text" id="starting-state"><br>
-        </label>
+      <form id="user-input-form">
+        <input type="text" id="starting-number" placeholder="Street Number"><br>
+        <input type="text" id="starting-street" placeholder="Street Name"><br>
+        <input type="text" id="street-type" placeholder="St, Blvd, Ln, etc."><br>
+        <input type="text" id="starting-city" placeholder="City"><br>
+        <input type="text" id="starting-state" placeholder="State"><br>
       </form>
     </div>
+
 
     <div class="col s12 m8 l9">
       <div id="brew-results"></div>
