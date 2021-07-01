@@ -43,7 +43,8 @@ function getBrewery() {
             return response.json();
         })
         .then(function (dataBrew) {
-            console.log(dataBrew);
+            brewResults.innerHTML = "";  //TODO clears the results list (not working)
+            //console.log(dataBrew);
             console.log('Brewery list \n----------');
             for (var i = 0; i < dataBrew.length; i++) {
                 console.log("name " + dataBrew[i].name);
@@ -57,25 +58,40 @@ function getBrewery() {
                 var cardBrewName = document.createElement('h4');
                 var cardBrewStreet = document.createElement('p');
                 var cardBrewCity = document.createElement('p');
+                var triggerDirections = document.createElement('button');
 
                 cardBrewName.innerText = dataBrew[i].name;
                 cardBrewStreet.innerText = dataBrew[i].street;
                 cardBrewCity.innerText = dataBrew[i].city;
+                triggerDirections.innerText = "get directions";
 
                 card.append(cardBrewName);
                 card.append(cardBrewStreet);
                 card.append(cardBrewCity);
+                card.append(triggerDirections);
                 brewResults.append(card);
 
             }
         });
 
 
-
-
-
-
 };
+
+//TODO The next part is to get the directions to the pub.  Steps below.
+//DONE   Create a "get directions button" Make a button on the search 
+//TODO 
+
+
+
+
+
+
+
+
+
+
+
+
 
 // add function to get the google map directions.  https://maps.googleapis.com/maps/api/directions/json?origin=rice+university+houston+tx&destination=memorial+park+houston+tx&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk
 
