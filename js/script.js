@@ -23,17 +23,21 @@ function populateQuestion () {
 */
 
 //These will come from user input.
-let userStartingNumber = "6501";
-let userStartingStreet = "Memorial";
-let userStreetType = "drive"
-let userStartingCity = "houston";
-let userStartingState = "tx"
+let demoStartingNumber = "6501";
+let demoStartingStreet = "Memorial";
+let demoStreetType = "drive"
+let demoStartingCity = "houston";
+let demoStartingState = "tx"
 let cityName = $('#city-name');
 let brewName = $('#brew-name');
 let brewResults = $("#brew-results");
 let brewSearchCity = "boston";
 let searchInput;
-
+let userStartingNumber = document.getElementById("starting-number");
+let userStartingStreet = document.getElementById("starting-street");
+let userStartingStreetType = document.getElementById("street-type");
+let userStartingCity = document.getElementById("starting-city");
+let userStartingState = document.getElementById("starting-state");
 
 
 function getBrewery() {
@@ -79,7 +83,13 @@ function getBrewery() {
 
 //TODO The next part is to get the directions to the pub.  Steps below.
 //DONE   Create a "get directions button" Make a button on the search 
-//TODO 
+//TODO  get the address from from the desired brewery street and city
+//TODO parse that address into something the google API likes
+//TODO get the user address they enter
+//TODO get all both addresses to google map API
+//TODO Populate the directions.
+
+
 
 
 
@@ -112,7 +122,21 @@ subBtnEl.addEventListener("click", () => {
 function searchCityForm(e) {
     searchInput = document.getElementById("city-name").value;
     console.log(searchInput);
-}
+};
+
+// Gathers data from the user input form
+//TODO still need a trigger event.
+function userAddressForm () {
+    userStartingNumber = document.getElementById("starting-number").value;
+    userStartingStreet = document.getElementById("starting-street").value;
+    userStartingStreetType = document.getElementById("street-type").value;
+    userStartingStreetType = document.getElementById("street-type").value;
+    userStartingCity = document.getElementById("starting-city").value;
+    userStartingState = document.getElementById("starting-state").value;
+
+};
+
+
 
 function hideLandingImg() {
     var landingImgEl = document.querySelector(".circle");
