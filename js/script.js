@@ -31,16 +31,14 @@ let userStartingState = "tx"
 let cityName = $('#city-name');
 let brewName = $('#brew-name');
 let brewResults = $("#brew-results");
-let brewSearchCity = "boston"
+let brewSearchCity = "boston";
+let searchInput;
 
 
-
-console.log("the link works")
-var requestBrew = 'https://api.openbrewerydb.org/breweries?by_type=brewpub&by_city=' + brewSearchCity;
 
 function getBrewery() {
 
-    fetch(requestBrew)
+    fetch('https://api.openbrewerydb.org/breweries?by_type=brewpub&by_city=' + searchInput,)
         .then(function (response) {
             return response.json();
         })
@@ -81,7 +79,8 @@ function getBrewery() {
 
 // add function to get the google map directions.  https://maps.googleapis.com/maps/api/directions/json?origin=rice+university+houston+tx&destination=memorial+park+houston+tx&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk
 
-getBrewery();
+//Comment this because it now runs inside the function.
+//getBrewery();
 
 // blurring or hiding landing page image and showing brewery list
 var subBtnEl = document.getElementById("subBtn")
@@ -89,7 +88,8 @@ var subBtnEl = document.getElementById("subBtn")
 subBtnEl.addEventListener("click", () => {
     hideLandingImg();
     showBreweryUserLocation();
-    searchCityForm();
+    searchCityForm(); //get the form sate
+    getBrewery(); //runs the api call to openbrewery 
 })
 //this captures the data from the brewery city search form.
 function searchCityForm(e) {
@@ -103,7 +103,7 @@ function hideLandingImg() {
     landingImgEl.setAttribute("style", "filter: blur(20px)");
 }
 
-function showBreweryUserLocation(){
+function showBreweryUserLocation() {
     var userFormEl = document.getElementById("user-input-form");
     userFormEl.setAttribute("style", "visibility: visible");
 
