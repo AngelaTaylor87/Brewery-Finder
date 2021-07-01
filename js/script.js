@@ -39,6 +39,7 @@ console.log("the link works")
 var requestBrew = 'https://api.openbrewerydb.org/breweries?by_type=brewpub&by_city=' + brewSearchCity;
 
 function getBrewery() {
+
     fetch(requestBrew)
         .then(function (response) {
             return response.json();
@@ -88,7 +89,14 @@ var subBtnEl = document.getElementById("subBtn")
 subBtnEl.addEventListener("click", () => {
     hideLandingImg();
     showBreweryUserLocation();
+    searchCityForm();
 })
+//this captures the data from the brewery city search form.
+function searchCityForm(e) {
+    searchInput = document.getElementById("city-name").value;
+    console.log(searchInput);
+}
+
 
 function hideLandingImg() {
     var landingImgEl = document.querySelector(".circle");
