@@ -47,7 +47,7 @@ function getBrewery() {
             return response.json();
         })
         .then(function (dataBrew) {
-            brewResults.innerHTML = "";  //TODO clears the results list (not working)
+            brewResults.empty();
             //console.log(dataBrew);
             console.log('Brewery list \n----------');
             for (var i = 0; i < dataBrew.length; i++) {
@@ -126,7 +126,7 @@ function searchCityForm(e) {
 
 // Gathers data from the user input form
 //TODO still need a trigger event.
-function userAddressForm () {
+function userAddressForm() {
     userStartingNumber = document.getElementById("starting-number").value;
     userStartingStreet = document.getElementById("starting-street").value;
     userStartingStreetType = document.getElementById("street-type").value;
