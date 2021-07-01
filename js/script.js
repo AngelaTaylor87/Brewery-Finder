@@ -116,7 +116,7 @@ subBtnEl.addEventListener("click", () => {
     showBreweryUserLocation();
     searchCityForm(); //get the form sate
     getBrewery(); //runs the api call to openbrewery 
-});
+})
 
 //this captures the data from the brewery city search form.
 function searchCityForm(e) {
@@ -138,18 +138,21 @@ function userAddressForm () {
 
 
 
-
 function hideLandingImg() {
     var landingImgEl = document.querySelector(".circle");
-    landingImgEl.setAttribute("style", "filter: blur(20px)");
-};
+    landingImgEl.setAttribute("style", "display: none");
+}
 
 function showBreweryUserLocation() {
-    var userFormEl = document.getElementById("user-input-form");
-    userFormEl.setAttribute("style", "visibility: visible");
+    // var userFormEl = document.getElementById("user-input-form");
+    // userFormEl.setAttribute("style", "visibility: visible");
+
+    var brewResultsEl = document.getElementById("brew-results");
+    brewResultsEl.setAttribute("style", "visibility: visible");
+}
 
 
-};
+
 
 
 
