@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(0deg, rgb(255, 255, 255) 25%,#e8d501);
+    background: linear-gradient(0deg, rgb(255, 255, 255) 10%,#e8d501);
     margin: 0;
     padding: 0;
     background-repeat: no-repeat;
@@ -15,7 +15,7 @@ h1 {
 }
 
 h2 {
-    font-size: 100px;
+    font-size: 75px;
     text-align: center;
     font-family: 'Pacifico', cursive;
     text-shadow: 0px 6px 6px rgba(97, 86, 0, 0.68);
