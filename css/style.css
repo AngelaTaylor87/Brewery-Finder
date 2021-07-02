@@ -12,7 +12,14 @@ h1 {
     text-align: center;
     font-family: 'Pacifico', cursive;
     text-shadow: 0px 6px 6px rgba(97, 86, 0, 0.68);
-    z-index: 4;
+}
+
+h2 {
+    font-size: 100px;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 0px 6px 6px rgba(97, 86, 0, 0.68);
+    z-index: 6;
 }
 
 input#city-name {
@@ -25,7 +32,7 @@ input#city-name {
     background-color:rgb(59, 143, 143);
     filter: opacity(80%);
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
-    z-index: 4;
+    z-index: 3;
 }
 
 button#subBtn  {
@@ -37,7 +44,8 @@ button#subBtn  {
     border-radius: 15px 15px 15px 15px;
     background-color: rgb(59, 143, 143);
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
-    z-index: 4;
+    z-index: 3;
+    cursor: pointer;
     
 }
 
@@ -49,26 +57,40 @@ button#subBtn i.fas.fa-beer:hover{
 }
 
 #brew-results{
+    margin-left: -200px;
     position: absolute;
     visibility: hidden;
     z-index: 3;
 }
 
 img {
-    
-    
+    margin-left: 570px;
+    position: absolute;
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
-    
-    
 }
 
+button#resBtn {
+    font-size: 20px;
+    margin-left: 200px;
+    margin-bottom: 30px;
+    width: 100px;
+    height: 60px;
+    border-radius: 10px 10px 10px 10px;
+    font-family:monospace;
+    cursor: pointer;
+
+}
+    
 #user-input-form{
-    visibility: visible;
+    width: 500px;
+    position: absolute;
+    margin-left: 860px;
+    visibility: hidden;
     background-color: rgb(59, 143, 143);
     filter: opacity(80%);
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
-    z-index: 4;
+    z-index: 3;
 }
 
 
@@ -78,28 +100,28 @@ img {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    
 }
     
+    
 .bubbles  {
-    z-index: 1;
+    z-index: -2;
     background: rgb(245, 241, 125);
     position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    border-radius: 40%;
     bottom: 0px;
-    opacity: 80%;
     animation: flying 6s infinite ease-in-out;
+    
 }
 
 .bubbles:nth-child(1){
-    width: 20px;
-    height: 20px;
-    left: 10%;
-    animation-duration: 6s;
+    width: 5px;
+    height: 5px;
+    left: 5%;
+    animation-duration: 8s;
     
 }
+    
+    
 .bubbles:nth-child(2){
     width: 10px;
     height: 10px;
@@ -107,12 +129,14 @@ img {
     animation-duration: 3s;
     animation-delay: 4s;
     
+    
 }
 .bubbles:nth-child(3){
     width: 15px;
     height: 15px;
     left: 30%;
     animation-duration: 4s;
+    
     
 }
 .bubbles:nth-child(4){
@@ -122,12 +146,14 @@ img {
     animation-duration: 3s;
     animation-delay: 5s;
     
+    
 }
 .bubbles:nth-child(5){
     width: 20px;
     height: 20px;
     left: 57%;
     animation-duration: 5s;
+    
     
 }
 .bubbles:nth-child(6){
@@ -137,6 +163,7 @@ img {
     animation-duration: 4s;
     animation-delay: 6s;
     
+    
 }
 .bubbles:nth-child(7){
     width: 15px;
@@ -144,6 +171,7 @@ img {
     left: 65%;
     animation-duration: 5s;
     animation-delay: 3s;
+    
 }
 .bubbles:nth-child(8){
     width: 12px;
@@ -152,12 +180,14 @@ img {
     animation-duration: 3s;
     animation-delay: 3s;
     
+    
 }
 .bubbles:nth-child(9){
     width: 15px;
     height: 15px;
     left: 85%;
     animation-duration: 5s;
+    
     
 }
 .bubbles:nth-child(10){
@@ -167,16 +197,17 @@ img {
     animation-duration: 5s;
     animation-delay: 4s;
     
+    
 }
     
 @keyframes flying {
     0% {
-        bottom: -100px;
-        transform: translateY(4);
+        bottom: -1000px;
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateY(10);
+        transform: translateY(0);
     }
     
     100% {
@@ -185,6 +216,35 @@ img {
     }
 }
 
+/* @media screen and (max-width:440px) {
+    body {
+        width: 100vw;
+        height: 100vw;
+    }
+    h1 {
+        font-size: 80px;
+        margin-right: 50px;
+    }
+    input#city-name {
+        margin-left: 40px;
+        font-size: 30px;
+        width: 300px;
+    }
+    button#subBtn {
+        margin-left: 140px;
+        font-size: 30px;
+        width: 100px;
+    }
+    
+} */
+    
+    
+    
+
+
+
+
+        
 
 
     
