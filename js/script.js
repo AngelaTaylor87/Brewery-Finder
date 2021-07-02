@@ -155,8 +155,17 @@ function showBreweryUserLocation() {
 
     var brewResultsEl = document.getElementById("brew-results");
     brewResultsEl.setAttribute("style", "visibility: visible");
+
+    subBtnEl.setAttribute("style", "display: none");
+
 }
 
+//Reset Button on User Input Form/Alert Function
+resBtnEl = document.getElementById("resBtn")
+
+resBtn.addEventListener("click", function () {
+    location.reload();
+});
 
 
 

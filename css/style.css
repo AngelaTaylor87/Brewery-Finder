@@ -12,6 +12,13 @@ h1 {
     text-align: center;
     font-family: 'Pacifico', cursive;
     text-shadow: 0px 6px 6px rgba(97, 86, 0, 0.68);
+}
+
+h2 {
+    font-size: 100px;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 0px 6px 6px rgba(97, 86, 0, 0.68);
     z-index: 6;
 }
 
@@ -38,6 +45,7 @@ button#subBtn  {
     background-color: rgb(59, 143, 143);
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
     z-index: 3;
+    cursor: pointer;
     
 }
 
@@ -49,17 +57,35 @@ button#subBtn i.fas.fa-beer:hover{
 }
 
 #brew-results{
+    margin-left: -200px;
     position: absolute;
     visibility: hidden;
     z-index: 3;
 }
 
 img {
+    margin-left: 570px;
+    position: absolute;
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
+}
+
+button#resBtn {
+    font-size: 20px;
+    margin-left: 200px;
+    margin-bottom: 30px;
+    width: 100px;
+    height: 60px;
+    border-radius: 10px 10px 10px 10px;
+    font-family:monospace;
+    cursor: pointer;
+
 }
     
 #user-input-form{
-    visibility: visible;
+    width: 500px;
+    position: absolute;
+    margin-left: 860px;
+    visibility: hidden;
     background-color: rgb(59, 143, 143);
     filter: opacity(80%);
     border-radius: 10px 10px 10px 10px;
@@ -78,32 +104,31 @@ img {
     
     
 .bubbles  {
-    z-index: 0;
+    z-index: -2;
     background: rgb(245, 241, 125);
     position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    border-radius: 40%;
     bottom: 0px;
-    opacity: 80%;
     animation: flying 6s infinite ease-in-out;
+    
 }
 
 .bubbles:nth-child(1){
-    width: 20px;
-    height: 20px;
-    left: 10%;
-    animation-duration: 6s;
-    z-index: 0;
+    width: 5px;
+    height: 5px;
+    left: 5%;
+    animation-duration: 8s;
     
 }
+    
+    
 .bubbles:nth-child(2){
     width: 10px;
     height: 10px;
     left: 15%;
     animation-duration: 3s;
     animation-delay: 4s;
-    z-index: 0;
+    
     
 }
 .bubbles:nth-child(3){
@@ -111,7 +136,7 @@ img {
     height: 15px;
     left: 30%;
     animation-duration: 4s;
-    z-index: 0;
+    
     
 }
 .bubbles:nth-child(4){
@@ -120,7 +145,7 @@ img {
     left: 40%;
     animation-duration: 3s;
     animation-delay: 5s;
-    z-index: 0;
+    
     
 }
 .bubbles:nth-child(5){
@@ -128,7 +153,7 @@ img {
     height: 20px;
     left: 57%;
     animation-duration: 5s;
-    z-index: 0;
+    
     
 }
 .bubbles:nth-child(6){
@@ -137,7 +162,7 @@ img {
     left: 55%;
     animation-duration: 4s;
     animation-delay: 6s;
-    z-index: 0;
+    
     
 }
 .bubbles:nth-child(7){
@@ -146,7 +171,7 @@ img {
     left: 65%;
     animation-duration: 5s;
     animation-delay: 3s;
-    z-index: 0;
+    
 }
 .bubbles:nth-child(8){
     width: 12px;
@@ -154,7 +179,7 @@ img {
     left: 75%;
     animation-duration: 3s;
     animation-delay: 3s;
-    z-index: 0;
+    
     
 }
 .bubbles:nth-child(9){
@@ -162,7 +187,7 @@ img {
     height: 15px;
     left: 85%;
     animation-duration: 5s;
-    z-index: 0;
+    
     
 }
 .bubbles:nth-child(10){
@@ -171,13 +196,13 @@ img {
     left: 95%;
     animation-duration: 5s;
     animation-delay: 4s;
-    z-index: 0;
+    
     
 }
     
 @keyframes flying {
     0% {
-        bottom: -100px;
+        bottom: -1000px;
         transform: translateY(0);
     }
 
