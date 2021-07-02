@@ -23,15 +23,9 @@ function populateQuestion () {
 */
 
 //These will come from user input.
-let demoStartingNumber = "6501";
-let demoStartingStreet = "Memorial";
-let demoStreetType = "drive"
-let demoStartingCity = "houston";
-let demoStartingState = "tx"
 let cityName = $('#city-name');
 let brewName = $('#brew-name');
 let brewResults = $("#brew-results");
-let brewSearchCity = "boston";
 let searchInput;
 let userStartingNumber = document.getElementById("starting-number");
 let userStartingStreet = document.getElementById("starting-street");
@@ -41,16 +35,26 @@ let userStartingState = document.getElementById("starting-state");
 
 
 function getBrewery() {
+    // DONE add if statement to trigger alert if the user does not enter a city
+    if (searchInput == "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Empty input!  Please enter a city',
+            footer: '',
+        })
+        return;
+    }
 
     fetch('https://api.openbrewerydb.org/breweries?by_type=brewpub&by_city=' + searchInput,)
         .then(function (response) {
             return response.json();
         })
         .then(function (dataBrew) {
-            brewResults.innerHTML = "";  //TODO clears the results list (not working)
+            brewResults.empty();
             //console.log(dataBrew);
             console.log('Brewery list \n----------');
-            for (var i = 0; i < dataBrew.length; i++) {
+            for (let i = 0; i < dataBrew.length; i++) {
                 console.log("name " + dataBrew[i].name);
                 console.log(dataBrew[i].brewery_type);
                 console.log(dataBrew[i].street);
@@ -58,11 +62,13 @@ function getBrewery() {
                 console.log(dataBrew[i].latitude);
                 console.log(dataBrew[i].longitude);
 
-                var card = document.createElement('div');
-                var cardBrewName = document.createElement('h4');
-                var cardBrewStreet = document.createElement('p');
-                var cardBrewCity = document.createElement('p');
-                var triggerDirections = document.createElement('button');
+                let card = document.createElement('div');
+                let cardBrewName = document.createElement('h4');
+                let cardBrewStreet = document.createElement('p');
+                let cardBrewCity = document.createElement('p');
+                let triggerDirections = document.createElement('button');
+                triggerDirections.setAttribute('data-brew', JSON.stringify(dataBrew[i])); // this adds the brewery info to each button. 
+
 
                 cardBrewName.innerText = dataBrew[i].name;
                 cardBrewStreet.innerText = dataBrew[i].street;
@@ -114,7 +120,7 @@ var subBtnEl = document.getElementById("subBtn")
 subBtnEl.addEventListener("click", () => {
     hideLandingImg();
     showBreweryUserLocation();
-    searchCityForm(); //get the form sate
+    searchCityForm(); //get the form data
     getBrewery(); //runs the api call to openbrewery 
 })
 
@@ -126,7 +132,7 @@ function searchCityForm(e) {
 
 // Gathers data from the user input form
 //TODO still need a trigger event.
-function userAddressForm () {
+function userAddressForm() {
     userStartingNumber = document.getElementById("starting-number").value;
     userStartingStreet = document.getElementById("starting-street").value;
     userStartingStreetType = document.getElementById("street-type").value;
@@ -144,8 +150,8 @@ function hideLandingImg() {
 }
 // The commented out function needs to run when the "Get Directions" button is clicked
 function showBreweryUserLocation() {
-    // var userFormEl = document.getElementById("user-input-form");
-    // userFormEl.setAttribute("style", "visibility: visible");
+    var userFormEl = document.getElementById("user-input-form");
+    userFormEl.setAttribute("style", "visibility: visible");
 
     var brewResultsEl = document.getElementById("brew-results");
     brewResultsEl.setAttribute("style", "visibility: visible");

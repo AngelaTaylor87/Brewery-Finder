@@ -59,7 +59,7 @@ img {
 }
     
 #user-input-form{
-    visibility: hidden;
+    visibility: visible;
     background-color: rgb(59, 143, 143);
     filter: opacity(80%);
     border-radius: 10px 10px 10px 10px;
