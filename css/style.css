@@ -12,7 +12,7 @@ h1 {
     text-align: center;
     font-family: 'Pacifico', cursive;
     text-shadow: 0px 6px 6px rgba(97, 86, 0, 0.68);
-    z-index: 4;
+    z-index: 6;
 }
 
 input#city-name {
@@ -25,7 +25,7 @@ input#city-name {
     background-color:rgb(59, 143, 143);
     filter: opacity(80%);
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
-    z-index: 4;
+    z-index: 3;
 }
 
 button#subBtn  {
@@ -37,7 +37,7 @@ button#subBtn  {
     border-radius: 15px 15px 15px 15px;
     background-color: rgb(59, 143, 143);
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
-    z-index: 4;
+    z-index: 3;
     
 }
 
@@ -55,20 +55,16 @@ button#subBtn i.fas.fa-beer:hover{
 }
 
 img {
-    
-    
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
-    
-    
 }
-
+    
 #user-input-form{
     visibility: hidden;
     background-color: rgb(59, 143, 143);
     filter: opacity(80%);
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
-    z-index: 4;
+    z-index: 3;
 }
 
 
@@ -78,11 +74,11 @@ img {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    
 }
     
+    
 .bubbles  {
-    z-index: 1;
+    z-index: 0;
     background: rgb(245, 241, 125);
     position: absolute;
     width: 40px;
@@ -98,6 +94,7 @@ img {
     height: 20px;
     left: 10%;
     animation-duration: 6s;
+    z-index: 0;
     
 }
 .bubbles:nth-child(2){
@@ -106,6 +103,7 @@ img {
     left: 15%;
     animation-duration: 3s;
     animation-delay: 4s;
+    z-index: 0;
     
 }
 .bubbles:nth-child(3){
@@ -113,6 +111,7 @@ img {
     height: 15px;
     left: 30%;
     animation-duration: 4s;
+    z-index: 0;
     
 }
 .bubbles:nth-child(4){
@@ -121,6 +120,7 @@ img {
     left: 40%;
     animation-duration: 3s;
     animation-delay: 5s;
+    z-index: 0;
     
 }
 .bubbles:nth-child(5){
@@ -128,6 +128,7 @@ img {
     height: 20px;
     left: 57%;
     animation-duration: 5s;
+    z-index: 0;
     
 }
 .bubbles:nth-child(6){
@@ -136,6 +137,7 @@ img {
     left: 55%;
     animation-duration: 4s;
     animation-delay: 6s;
+    z-index: 0;
     
 }
 .bubbles:nth-child(7){
@@ -144,6 +146,7 @@ img {
     left: 65%;
     animation-duration: 5s;
     animation-delay: 3s;
+    z-index: 0;
 }
 .bubbles:nth-child(8){
     width: 12px;
@@ -151,6 +154,7 @@ img {
     left: 75%;
     animation-duration: 3s;
     animation-delay: 3s;
+    z-index: 0;
     
 }
 .bubbles:nth-child(9){
@@ -158,6 +162,7 @@ img {
     height: 15px;
     left: 85%;
     animation-duration: 5s;
+    z-index: 0;
     
 }
 .bubbles:nth-child(10){
@@ -166,17 +171,18 @@ img {
     left: 95%;
     animation-duration: 5s;
     animation-delay: 4s;
+    z-index: 0;
     
 }
     
 @keyframes flying {
     0% {
         bottom: -100px;
-        transform: translateY(4);
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateY(10);
+        transform: translateY(0);
     }
     
     100% {
@@ -185,6 +191,35 @@ img {
     }
 }
 
+/* @media screen and (max-width:440px) {
+    body {
+        width: 100vw;
+        height: 100vw;
+    }
+    h1 {
+        font-size: 80px;
+        margin-right: 50px;
+    }
+    input#city-name {
+        margin-left: 40px;
+        font-size: 30px;
+        width: 300px;
+    }
+    button#subBtn {
+        margin-left: 140px;
+        font-size: 30px;
+        width: 100px;
+    }
+    
+} */
+    
+    
+    
+
+
+
+
+        
 
 
     

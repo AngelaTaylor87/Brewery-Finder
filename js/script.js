@@ -142,7 +142,7 @@ function hideLandingImg() {
     var landingImgEl = document.querySelector(".circle");
     landingImgEl.setAttribute("style", "display: none");
 }
-
+// The commented out function needs to run when the "Get Directions" button is clicked
 function showBreweryUserLocation() {
     // var userFormEl = document.getElementById("user-input-form");
     // userFormEl.setAttribute("style", "visibility: visible");
