@@ -156,7 +156,7 @@ function showBreweryUserLocation() {
     var brewResultsEl = document.getElementById("brew-results");
     brewResultsEl.setAttribute("style", "visibility: visible");
 
-    subBtnEl.setAttribute("style", "display: none");
+    // subBtnEl.setAttribute("style", "display: none");
 
 }
 
