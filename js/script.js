@@ -96,19 +96,6 @@ function getBrewery() {
 //TODO Populate the directions.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // add function to get the google map directions.  https://maps.googleapis.com/maps/api/directions/json?origin=rice+university+houston+tx&destination=memorial+park+houston+tx&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk
 
 //Comment this because it now runs inside the function.
@@ -140,7 +127,27 @@ function userAddressForm() {
     userStartingCity = document.getElementById("starting-city").value;
     userStartingState = document.getElementById("starting-state").value;
 
+
 };
+
+//TODO eventlistner for the "get directions buttons"
+$("#brew-results").on("click", function (event) {
+    const dataBrew = JSON.parse(event.target.getAttribute('data-brew'));
+    const brewStreet = dataBrew.street
+    const brewCity = dataBrew.city
+    console.log(dataBrew);
+    console.log(brewStreet);
+    console.log(brewCity);
+
+    runGoogleSearch();
+});
+
+function runGoogleSearch () {
+    alert("run the google search");
+    console.log(dataBrew);
+    console.log(brewStreet);
+    console.log(brewCity);
+}
 
 
 
