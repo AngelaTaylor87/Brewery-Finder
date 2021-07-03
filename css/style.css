@@ -86,20 +86,6 @@ button#resBtn {
 
 }
 
-button#goBtn {
-    color: ghostwhite;
-    background-color: forestgreen;
-    font-size: 20px;
-    margin-left: 200px;
-    margin-bottom: 30px;
-    width: 100px;
-    height: 60px;
-    box-shadow: 0px 3px 3px 3px rgba(97, 86, 0, 0.68);
-    border-radius: 10px 10px 10px 10px;
-    font-family:monospace;
-    cursor: pointer;
-
-}
     
 #user-input-form{
     width: 500px;
