@@ -22,7 +22,7 @@ function populateQuestion () {
 }
 */
 
-//These will come from user input.
+//declare global variables
 let cityName = $('#city-name');
 let brewName = $('#brew-name');
 let brewResults = $("#brew-results");
@@ -32,6 +32,12 @@ let userStartingStreet = document.getElementById("starting-street");
 let userStartingStreetType = document.getElementById("street-type");
 let userStartingCity = document.getElementById("starting-city");
 let userStartingState = document.getElementById("starting-state");
+let dataBrew;
+let brewStreet;
+let brewCity;
+let brewAddress;
+let userAddress;
+
 
 
 function getBrewery() {
@@ -96,19 +102,6 @@ function getBrewery() {
 //TODO Populate the directions.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // add function to get the google map directions.  https://maps.googleapis.com/maps/api/directions/json?origin=rice+university+houston+tx&destination=memorial+park+houston+tx&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk
 
 //Comment this because it now runs inside the function.
@@ -130,17 +123,48 @@ function searchCityForm(e) {
     console.log(searchInput);
 };
 
-// Gathers data from the user input form
-//TODO still need a trigger event.
-function userAddressForm() {
+
+
+//TODO put in the google fetch
+$("#brew-results").on("click", function (event) {
+    dataBrew = JSON.parse(event.target.getAttribute('data-brew'));
+    brewStreet = dataBrew.street
+    brewCity = dataBrew.city
     userStartingNumber = document.getElementById("starting-number").value;
     userStartingStreet = document.getElementById("starting-street").value;
     userStartingStreetType = document.getElementById("street-type").value;
     userStartingStreetType = document.getElementById("street-type").value;
     userStartingCity = document.getElementById("starting-city").value;
     userStartingState = document.getElementById("starting-state").value;
+    //console.log(dataBrew);
+    // console.log("brew street: " + brewStreet);
+    // console.log("brew sity " + brewCity);
+    // console.log("user number " + userStartingNumber);
+    brewAddress = brewStreet + " " + brewCity;
+    //console.log(brewAddress);
+    brewAddress = brewAddress.replace(/ /g, "+");
+    console.log(brewAddress);
+    userAddress = userStartingNumber + " " + userStartingStreet + " " + userStartingCity + " " + userStartingState;
+    userAddress = userAddress.replace(/ /g, "+");
+    console.log(userAddress);
 
-};
+    fetch('https://maps.googleapis.com/maps/api/directions/json?origin=' + userAddress + '&destination=' + brewAddress + '&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (dataGoogle) {
+
+            //console.log(dataBrew);
+            console.log('Google results \n----------');
+            console.log(dataGoogle);
+
+
+
+
+
+        }); // end of get google function
+
+});
 
 
 
