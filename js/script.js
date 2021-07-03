@@ -125,7 +125,7 @@ function searchCityForm(e) {
 
 
 
-//TODO 
+//TODO put in the google fetch
 $("#brew-results").on("click", function (event) {
     dataBrew = JSON.parse(event.target.getAttribute('data-brew'));
     brewStreet = dataBrew.street
@@ -137,20 +137,34 @@ $("#brew-results").on("click", function (event) {
     userStartingCity = document.getElementById("starting-city").value;
     userStartingState = document.getElementById("starting-state").value;
     //console.log(dataBrew);
-    console.log("brew street: " + brewStreet);
-    console.log("brew sity " + brewCity);
-    console.log("user number " + userStartingNumber);
+    // console.log("brew street: " + brewStreet);
+    // console.log("brew sity " + brewCity);
+    // console.log("user number " + userStartingNumber);
     brewAddress = brewStreet + " " + brewCity;
-    console.log(brewAddress);
+    //console.log(brewAddress);
     brewAddress = brewAddress.replace(/ /g, "+");
     console.log(brewAddress);
     userAddress = userStartingNumber + " " + userStartingStreet + " " + userStartingCity + " " + userStartingState;
     userAddress = userAddress.replace(/ /g, "+");
     console.log(userAddress);
 
+    fetch('https://maps.googleapis.com/maps/api/directions/json?origin=' + userAddress + '&destination=' + brewAddress + '&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (dataGoogle) {
+
+            //console.log(dataBrew);
+            console.log('Google results \n----------');
+            console.log(dataGoogle);
+
+
+
+
+
+        }); // end of get google function
+
 });
-
-
 
 
 
