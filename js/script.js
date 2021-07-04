@@ -95,17 +95,8 @@ function getBrewery() {
 
 //TODO The next part is to get the directions to the pub.  Steps below.
 //DONE   Create a "get directions button" Make a button on the search 
-//TODO  get the address from from the desired brewery street and city
-//TODO parse that address into something the google API likes
-//TODO get the user address they enter
-//TODO get all both addresses to google map API
 //TODO Populate the directions.
 
-
-// add function to get the google map directions.  https://maps.googleapis.com/maps/api/directions/json?origin=rice+university+houston+tx&destination=memorial+park+houston+tx&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk
-
-//Comment this because it now runs inside the function.
-//getBrewery();
 
 // blurring or hiding landing page image and showing brewery list
 var subBtnEl = document.getElementById("subBtn")
@@ -148,9 +139,9 @@ $("#brew-results").on("click", function (event) {
     userAddress = userAddress.replace(/ /g, "+");
     console.log(userAddress);
 
-    fetch('https://maps.googleapis.com/maps/api/directions/json?origin=' + userAddress + '&destination=' + brewAddress + '&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk')
+    fetch('https://maps.googleapis.com/maps/api/directions/json?origin=' + userAddress + '&destination=' + brewAddress + '&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk', { mode: 'no-cors' })
         .then(function (response) {
-            return response.json();
+            return response.json(); //line 144
         })
         .then(function (dataGoogle) {
 
