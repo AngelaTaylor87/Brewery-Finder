@@ -95,17 +95,8 @@ function getBrewery() {
 
 //TODO The next part is to get the directions to the pub.  Steps below.
 //DONE   Create a "get directions button" Make a button on the search 
-//TODO  get the address from from the desired brewery street and city
-//TODO parse that address into something the google API likes
-//TODO get the user address they enter
-//TODO get all both addresses to google map API
 //TODO Populate the directions.
 
-
-// add function to get the google map directions.  https://maps.googleapis.com/maps/api/directions/json?origin=rice+university+houston+tx&destination=memorial+park+houston+tx&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk
-
-//Comment this because it now runs inside the function.
-//getBrewery();
 
 // blurring or hiding landing page image and showing brewery list
 var subBtnEl = document.getElementById("subBtn")
@@ -148,22 +139,23 @@ $("#brew-results").on("click", function (event) {
     userAddress = userAddress.replace(/ /g, "+");
     console.log(userAddress);
 
-    fetch('https://maps.googleapis.com/maps/api/directions/json?origin=' + userAddress + '&destination=' + brewAddress + '&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (dataGoogle) {
-
-            //console.log(dataBrew);
-            console.log('Google results \n----------');
-            console.log(dataGoogle);
-
-
-
+    // fetch('https://maps.googleapis.com/maps/api/directions/json?origin=' + userAddress + '&destination=' + brewAddress + '&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk')
+    //     .then(function (response) {
+    //         if (!response.ok) {
+    //             throw new Error('Network response was not ok');
+    //         }
+    //         return response.json();
+    //     })
+    //     .then(function (dataGoogle) {
+    //         console.log('Google results \n----------');
+    //         console.log(dataGoogle);
 
 
-        }); // end of get google function
 
+
+
+    //     }); // end of get google function
+    calcRoute(userAddress, brewAddress);
 });
 
 
@@ -192,6 +184,34 @@ resBtn.addEventListener("click", function () {
 });
 
 
+// function initMap() {
+//     var directionsService = new google.maps.DirectionsService();
+//     var directionsRenderer = new google.maps.DirectionsRenderer();
+//     var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+//     var mapOptions = {
+//       zoom:7,
+//       center: chicago
+//     }
+//     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+//     directionsRenderer.setMap(map);
+//   }
+
+function calcRoute(start, end) {
+    var directionsService = new google.maps.DirectionsService();
+    var directionsRenderer = new google.maps.DirectionsRenderer();
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: 'DRIVING'
+    };
+    directionsService.route(request, function (result, status) {
+        console.log(result);
+        if (status == 'OK') {
+
+            //   directionsRenderer.setDirections(result);
+        }
+    });
+}
 
 
 
