@@ -58,7 +58,7 @@ function getBrewery() {
         })
         .then(function (dataBrew) {
             brewResults.empty();
-            //console.log(dataBrew);
+            console.log(dataBrew);
             console.log('Brewery list \n----------');
             for (let i = 0; i < dataBrew.length; i++) {
                 console.log("name " + dataBrew[i].name);
@@ -139,23 +139,10 @@ $("#brew-results").on("click", function (event) {
     userAddress = userAddress.replace(/ /g, "+");
     console.log(userAddress);
 
-    // fetch('https://maps.googleapis.com/maps/api/directions/json?origin=' + userAddress + '&destination=' + brewAddress + '&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk')
-    //     .then(function (response) {
-    //         if (!response.ok) {
-    //             throw new Error('Network response was not ok');
-    //         }
-    //         return response.json();
-    //     })
-    //     .then(function (dataGoogle) {
-    //         console.log('Google results \n----------');
-    //         console.log(dataGoogle);
 
-
-
-
-
-    //     }); // end of get google function
     calcRoute(userAddress, brewAddress);
+
+
 });
 
 
@@ -183,18 +170,8 @@ resBtn.addEventListener("click", function () {
     location.reload();
 });
 
+//  from https://developers.google.com/maps/documentation/javascript/directions
 
-// function initMap() {
-//     var directionsService = new google.maps.DirectionsService();
-//     var directionsRenderer = new google.maps.DirectionsRenderer();
-//     var chicago = new google.maps.LatLng(41.850033, -87.6500523);
-//     var mapOptions = {
-//       zoom:7,
-//       center: chicago
-//     }
-//     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-//     directionsRenderer.setMap(map);
-//   }
 
 function calcRoute(start, end) {
     var directionsService = new google.maps.DirectionsService();
@@ -205,14 +182,42 @@ function calcRoute(start, end) {
         travelMode: 'DRIVING'
     };
     directionsService.route(request, function (result, status) {
-        console.log(result);
-        if (status == 'OK') {
+        //console.log(result)
 
-            //   directionsRenderer.setDirections(result);
+        //console.log("inside " + result.routes[0].legs[0].steps[0].instructions);
+        let postSteps = result.routes[0].legs[0].steps;
+        //console.log(postSteps);
+        console.log("from variable " + postSteps[2].instructions);
+        brewResults.empty();
+        for (let i = 0; i < postSteps.length; i++) {
+            console.log("from loop " + postSteps[i].instructions);
+
+            let card = document.createElement('div');
+            let cardSteps = document.createElement('p');
+
+            cardSteps.innerText = postSteps[i].instructions;
+
+            card.append(cardSteps);
+            brewResults.append(card);
         }
+
     });
+
+
 }
 
+/*
+            brewResults.empty();
+            for (let i = 0; i < dataBrew.length; i++) {
+                console.log("name " + dataBrew[i].name);
 
+                let card = document.createElement('div');
+                let cardBrewStreet = document.createElement('p');
 
+                cardBrewName.innerText = dataBrew[i].name;
 
+                card.append(cardBrewName);
+
+                brewResults.append(card);
+            }
+*/
