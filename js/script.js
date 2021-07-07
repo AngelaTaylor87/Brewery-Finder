@@ -129,7 +129,7 @@ $("#brew-results").on("click", function (event) {
     userStartingState = document.getElementById("starting-state").value;
     //console.log(dataBrew);
     // console.log("brew street: " + brewStreet);
-    // console.log("brew sity " + brewCity);
+    // console.log("brew city " + brewCity);
     // console.log("user number " + userStartingNumber);
     brewAddress = brewStreet + " " + brewCity;
     //console.log(brewAddress);
