@@ -186,16 +186,23 @@ function calcRoute(start, end) {
 
         //console.log("inside " + result.routes[0].legs[0].steps[0].instructions);
         let postSteps = result.routes[0].legs[0].steps;
-        //console.log(postSteps);
-        console.log("from variable " + postSteps[2].instructions);
+        console.log(postSteps);
+        //console.log("from variable " + postSteps[2].instructions);
         brewResults.empty();
         for (let i = 0; i < postSteps.length; i++) {
-            console.log("from loop " + postSteps[i].instructions);
+            //console.log("from loop " + postSteps[i].instructions);
+            //console.log("from loop " + postSteps[i].distance.text)
+
+            let postStepsClean = postSteps[i].instructions;
+            postStepsClean = postStepsClean.replace(/[\/\\]/g, "")
+            postStepsClean = postStepsClean.replace(/<b>/g, "")
+
+            console.log(postStepsClean);
 
             let card = document.createElement('div');
             let cardSteps = document.createElement('p');
 
-            cardSteps.innerText = postSteps[i].instructions;
+            cardSteps.innerText = postStepsClean + " for " + postSteps[i].distance.text;
 
             card.append(cardSteps);
             brewResults.append(card);
@@ -206,18 +213,3 @@ function calcRoute(start, end) {
 
 }
 
-/*
-            brewResults.empty();
-            for (let i = 0; i < dataBrew.length; i++) {
-                console.log("name " + dataBrew[i].name);
-
-                let card = document.createElement('div');
-                let cardBrewStreet = document.createElement('p');
-
-                cardBrewName.innerText = dataBrew[i].name;
-
-                card.append(cardBrewName);
-
-                brewResults.append(card);
-            }
-*/
