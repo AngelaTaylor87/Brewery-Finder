@@ -139,13 +139,14 @@ $("#brew-results").on("click", function (event) {
     userAddress = userAddress.replace(/ /g, "+");
     console.log(userAddress);
 
-    fetch('https://maps.googleapis.com/maps/api/directions/json?origin=' + userAddress + '&destination=' + brewAddress + '&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk', { mode: 'no-cors' })
+    fetch('https://maps.googleapis.com/maps/api/directions/json?origin=' + userAddress + '&destination=' + brewAddress + '&key=AIzaSyDC5AdoHrcoAnFtL415iw6aop7wEUJbSwk')
         .then(function (response) {
-            return response.json(); //line 144
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
         })
         .then(function (dataGoogle) {
-
-            //console.log(dataBrew);
             console.log('Google results \n----------');
             console.log(dataGoogle);
 
