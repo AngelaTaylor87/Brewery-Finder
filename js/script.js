@@ -143,7 +143,7 @@ $("#brew-results").on("click", function (event) {
     calcRoute(userAddress, brewAddress);
 
     var userFormEl = document.getElementById("user-input-form");
-    userFormEl.setAttribute("style", "visibility: hidden");
+    userFormEl.setAttribute("style", "display: none");
 
     resBtnEl = document.getElementById("resBtn");
     resBtnEl.setAttribute("style", "visibility: visible");
@@ -158,7 +158,7 @@ function hideLandingImg() {
 // The commented out function needs to run when the "Get Directions" button is clicked
 function showBreweryUserLocation() {
     var userFormEl = document.getElementById("user-input-form");
-    userFormEl.setAttribute("style", "visibility: visible");
+    userFormEl.setAttribute("style", "display: block");
 
     var brewResultsEl = document.getElementById("brew-results");
     brewResultsEl.setAttribute("style", "visibility: visible");
