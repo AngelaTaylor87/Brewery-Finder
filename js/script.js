@@ -142,7 +142,11 @@ $("#brew-results").on("click", function (event) {
 
     calcRoute(userAddress, brewAddress);
 
+    var userFormEl = document.getElementById("user-input-form");
+    userFormEl.setAttribute("style", "visibility: hidden");
 
+    resBtnEl = document.getElementById("resBtn");
+    resBtnEl.setAttribute("style", "visibility: visible");
 });
 
 
@@ -159,7 +163,6 @@ function showBreweryUserLocation() {
     var brewResultsEl = document.getElementById("brew-results");
     brewResultsEl.setAttribute("style", "visibility: visible");
 
-    // subBtnEl.setAttribute("style", "display: none");
 
 }
 
@@ -196,6 +199,7 @@ function calcRoute(start, end) {
             let postStepsClean = postSteps[i].instructions;
             postStepsClean = postStepsClean.replace(/[\/\\]/g, "")
             postStepsClean = postStepsClean.replace(/<b>/g, "")
+            
 
             console.log(postStepsClean);
 

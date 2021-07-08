@@ -67,7 +67,6 @@ button#subBtn i.fas.fa-beer:hover{
 
 #brew-results{
     margin-left: -200px;
-    position: absolute;
     visibility: hidden;
     z-index: 3;
 }
@@ -75,16 +74,17 @@ button#subBtn i.fas.fa-beer:hover{
 img {
     border-radius: 50%;
     margin-left: 570px;
-    position: absolute;
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
 }
 
 button#resBtn {
+    visibility: hidden;
+    margin-bottom: -200px;
+    margin-left: 1085px;
+    align-content: space-around;
     color: ghostwhite;
     background-color: red;
     font-size: 20px;
-    margin-left: 200px;
-    margin-bottom: 30px;
     width: 100px;
     height: 60px;
     border-radius: 10px 10px 10px 10px;
@@ -96,21 +96,23 @@ button#resBtn {
 
     
 #user-input-form{
-    width: 500px;
     position: absolute;
+    width: 500px;
     margin-left: 860px;
     visibility: hidden;
     background-color: rgb(59, 143, 143);
-    filter: opacity(80%);
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
     z-index: 4;
 }
 
+h6 {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 
 .bubble {
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -124,6 +126,7 @@ button#resBtn {
     border-radius: 40%;
     bottom: 0px;
     animation: flying 6s infinite ease-in-out;
+    
 }
     
 
