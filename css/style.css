@@ -1,8 +1,9 @@
-*,
-*::before,
-*::after {
-box-sizing: border-box;
-}
+ * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+} 
+
 
 
 body {
@@ -31,9 +32,14 @@ h2 {
     z-index: 1;
 }
 
+div.navbar-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 input#city-name {
     text-align: center;
-    margin-left: 880px;
     color: mintcream;
     border-radius: 10px 10px 10px 10px;
     width: 500px;
@@ -43,9 +49,9 @@ input#city-name {
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
     z-index: 3;
 }
+    
 
 button#subBtn  {
-    margin-left: 1080px;
     color: #fce701;
     width:  120px;
     height: 100px;
@@ -57,31 +63,40 @@ button#subBtn  {
     cursor: pointer;
 }
     
-
-
 button#subBtn i.fas.fa-beer:hover{
     transition: all 0.5s ease-in-out;
     font-size: 60px;
     z-index: 4;
 }
 
+div.col.s12.m8.l9 {
+    display: flex;
+    justify-content: center;
+}
+
 #brew-results{
-    margin-left: -200px;
     visibility: hidden;
     z-index: 3;
 }
 
+div.back-img {
+    display: flex;
+    justify-content: center;
+    
+}
+
 img {
     border-radius: 50%;
-    margin-left: 570px;
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
+}
+
+div.reset-btn {
+    display: flex;
+    justify-content: center;
 }
 
 button#resBtn {
     visibility: hidden;
-    margin-bottom: -200px;
-    margin-left: 1085px;
-    align-content: space-around;
     color: ghostwhite;
     background-color: red;
     font-size: 20px;
@@ -93,13 +108,14 @@ button#resBtn {
     box-shadow: 0px 3px 3px 3px rgba(97, 86, 0, 0.68);
 }
 
-
+div.col.s12.m4.l3 {
+    display: flex;
+    justify-content: center;
+}
     
 #user-input-form{
-    position: absolute;
     width: 500px;
-    margin-left: 860px;
-    visibility: hidden;
+    display: none;
     background-color: rgb(59, 143, 143);
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0px 6px 6px 6px rgba(97, 86, 0, 0.68);
@@ -122,7 +138,7 @@ h6 {
 .bubbles  {
     z-index: -2;
     background: rgb(245, 241, 125);
-    position: absolute;
+    position:fixed;
     border-radius: 40%;
     bottom: 0px;
     animation: flying 6s infinite ease-in-out;
