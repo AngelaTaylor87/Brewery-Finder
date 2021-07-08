@@ -194,8 +194,10 @@ function calcRoute(start, end) {
             //console.log("from loop " + postSteps[i].distance.text)
 
             let postStepsClean = postSteps[i].instructions;
-            postStepsClean = postStepsClean.replace(/[\/\\]/g, "")
-            postStepsClean = postStepsClean.replace(/<b>/g, "")
+            postStepsClean = postStepsClean.replace(/[\/\\]/g, "");
+            postStepsClean = postStepsClean.replace(/<b>/g, "");
+            postStepsClean = postStepsClean.replace(/<div style="font-size:0.9em">/g, " ")
+            postStepsClean = postStepsClean.replace(/<div>/g, " ")
 
             console.log(postStepsClean);
 
