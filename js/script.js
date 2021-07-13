@@ -152,7 +152,7 @@ $("#brew-results").on("click", function (event) {
 
 
 function hideLandingImg() {
-    var landingImgEl = document.querySelector(".circle");
+    var landingImgEl = document.querySelector(".back-img");
     landingImgEl.setAttribute("style", "display: none");
 }
 // The commented out function needs to run when the "Get Directions" button is clicked
